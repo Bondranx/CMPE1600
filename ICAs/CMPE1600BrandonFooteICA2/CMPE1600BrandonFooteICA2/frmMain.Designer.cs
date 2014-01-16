@@ -36,7 +36,7 @@
             this.lblOvertimePay = new System.Windows.Forms.Label();
             this.lblPayDue = new System.Windows.Forms.Label();
             this.tbxHourlyRate = new System.Windows.Forms.TextBox();
-            this.lbxHourlyRate = new System.Windows.Forms.TextBox();
+            this.tbxHoursWorked = new System.Windows.Forms.TextBox();
             this.lblRegHoursOutput = new System.Windows.Forms.Label();
             this.lblOvertimeHoursOutput = new System.Windows.Forms.Label();
             this.lblRegPayTotal = new System.Windows.Forms.Label();
@@ -114,63 +114,60 @@
             this.tbxHourlyRate.Name = "tbxHourlyRate";
             this.tbxHourlyRate.Size = new System.Drawing.Size(100, 20);
             this.tbxHourlyRate.TabIndex = 8;
+            this.tbxHourlyRate.TextChanged += new System.EventHandler(this.tbxHourlyRate_TextChanged);
             // 
-            // lbxHourlyRate
+            // tbxHoursWorked
             // 
-            this.lbxHourlyRate.Location = new System.Drawing.Point(161, 53);
-            this.lbxHourlyRate.Name = "lbxHourlyRate";
-            this.lbxHourlyRate.Size = new System.Drawing.Size(100, 20);
-            this.lbxHourlyRate.TabIndex = 9;
+            this.tbxHoursWorked.Location = new System.Drawing.Point(161, 53);
+            this.tbxHoursWorked.Name = "tbxHoursWorked";
+            this.tbxHoursWorked.Size = new System.Drawing.Size(100, 20);
+            this.tbxHoursWorked.TabIndex = 9;
+            this.tbxHoursWorked.TextChanged += new System.EventHandler(this.lbxHourlyRate_TextChanged);
             // 
             // lblRegHoursOutput
             // 
             this.lblRegHoursOutput.AutoSize = true;
             this.lblRegHoursOutput.Location = new System.Drawing.Point(185, 110);
             this.lblRegHoursOutput.Name = "lblRegHoursOutput";
-            this.lblRegHoursOutput.Size = new System.Drawing.Size(35, 13);
+            this.lblRegHoursOutput.Size = new System.Drawing.Size(22, 13);
             this.lblRegHoursOutput.TabIndex = 10;
-            this.lblRegHoursOutput.Text = "label1";
-            this.lblRegHoursOutput.Visible = false;
+            this.lblRegHoursOutput.Text = "0.0";
             // 
             // lblOvertimeHoursOutput
             // 
             this.lblOvertimeHoursOutput.AutoSize = true;
             this.lblOvertimeHoursOutput.Location = new System.Drawing.Point(185, 133);
             this.lblOvertimeHoursOutput.Name = "lblOvertimeHoursOutput";
-            this.lblOvertimeHoursOutput.Size = new System.Drawing.Size(35, 13);
+            this.lblOvertimeHoursOutput.Size = new System.Drawing.Size(22, 13);
             this.lblOvertimeHoursOutput.TabIndex = 11;
-            this.lblOvertimeHoursOutput.Text = "label9";
-            this.lblOvertimeHoursOutput.Visible = false;
+            this.lblOvertimeHoursOutput.Text = "0.0";
             // 
             // lblRegPayTotal
             // 
             this.lblRegPayTotal.AutoSize = true;
             this.lblRegPayTotal.Location = new System.Drawing.Point(185, 163);
             this.lblRegPayTotal.Name = "lblRegPayTotal";
-            this.lblRegPayTotal.Size = new System.Drawing.Size(41, 13);
+            this.lblRegPayTotal.Size = new System.Drawing.Size(34, 13);
             this.lblRegPayTotal.TabIndex = 12;
-            this.lblRegPayTotal.Text = "label10";
-            this.lblRegPayTotal.Visible = false;
+            this.lblRegPayTotal.Text = "$0.00";
             // 
             // lblOvertimePayTotal
             // 
             this.lblOvertimePayTotal.AutoSize = true;
             this.lblOvertimePayTotal.Location = new System.Drawing.Point(185, 186);
             this.lblOvertimePayTotal.Name = "lblOvertimePayTotal";
-            this.lblOvertimePayTotal.Size = new System.Drawing.Size(41, 13);
+            this.lblOvertimePayTotal.Size = new System.Drawing.Size(34, 13);
             this.lblOvertimePayTotal.TabIndex = 13;
-            this.lblOvertimePayTotal.Text = "label11";
-            this.lblOvertimePayTotal.Visible = false;
+            this.lblOvertimePayTotal.Text = "$0.00";
             // 
             // lblPayDueTotal
             // 
             this.lblPayDueTotal.AutoSize = true;
             this.lblPayDueTotal.Location = new System.Drawing.Point(185, 215);
             this.lblPayDueTotal.Name = "lblPayDueTotal";
-            this.lblPayDueTotal.Size = new System.Drawing.Size(41, 13);
+            this.lblPayDueTotal.Size = new System.Drawing.Size(34, 13);
             this.lblPayDueTotal.TabIndex = 14;
-            this.lblPayDueTotal.Text = "label12";
-            this.lblPayDueTotal.Visible = false;
+            this.lblPayDueTotal.Text = "$0.00";
             // 
             // btnCalculate
             // 
@@ -192,7 +189,7 @@
             this.Controls.Add(this.lblRegPayTotal);
             this.Controls.Add(this.lblOvertimeHoursOutput);
             this.Controls.Add(this.lblRegHoursOutput);
-            this.Controls.Add(this.lbxHourlyRate);
+            this.Controls.Add(this.tbxHoursWorked);
             this.Controls.Add(this.tbxHourlyRate);
             this.Controls.Add(this.lblPayDue);
             this.Controls.Add(this.lblOvertimePay);
@@ -219,7 +216,7 @@
         private System.Windows.Forms.Label lblOvertimePay;
         private System.Windows.Forms.Label lblPayDue;
         private System.Windows.Forms.TextBox tbxHourlyRate;
-        private System.Windows.Forms.TextBox lbxHourlyRate;
+        private System.Windows.Forms.TextBox tbxHoursWorked;
         private System.Windows.Forms.Label lblRegHoursOutput;
         private System.Windows.Forms.Label lblOvertimeHoursOutput;
         private System.Windows.Forms.Label lblRegPayTotal;
