@@ -29,8 +29,10 @@ namespace CMPE1600BrandonFooteICA2
             lblPayDueTotal.Text = "$0.00";
             lblRegPayTotal.Text = "$0.00";
             lblOvertimePayTotal.Text = "$0.00";
-            if (lblHourlyRate.Text == "" && lblHoursWorked.Text == "")
+            if (lblHourlyRate.Text != "" || lblHoursWorked.Text != "")
                 btnCalculate.Enabled = false;
+            else
+                btnCalculate.Enabled = true;
         }
 
         private void lbxHourlyRate_TextChanged(object sender, EventArgs e)
@@ -40,7 +42,9 @@ namespace CMPE1600BrandonFooteICA2
             lblPayDueTotal.Text = "$0.00";
             lblRegPayTotal.Text = "$0.00";
             lblOvertimePayTotal.Text = "$0.00";
-            if (lblHourlyRate.Text != "" && lblHoursWorked.Text != "")
+            if (lblHourlyRate.Text != "" || lblHoursWorked.Text != "")
+                btnCalculate.Enabled = false;
+            else
                 btnCalculate.Enabled = true;
         }
 
