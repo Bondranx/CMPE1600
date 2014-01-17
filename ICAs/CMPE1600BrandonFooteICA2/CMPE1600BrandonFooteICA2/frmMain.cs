@@ -11,8 +11,7 @@ namespace CMPE1600BrandonFooteICA2
 {
     public partial class frmMain : Form
     {
-        private int hoursWorked = 0;
-        private int hourlyRate = 0;
+
         public frmMain()
         {
             InitializeComponent();
@@ -30,6 +29,8 @@ namespace CMPE1600BrandonFooteICA2
             lblPayDueTotal.Text = "$0.00";
             lblRegPayTotal.Text = "$0.00";
             lblOvertimePayTotal.Text = "$0.00";
+            if (lblHourlyRate.Text == "" && lblHoursWorked.Text == "")
+                btnCalculate.Enabled = false;
         }
 
         private void lbxHourlyRate_TextChanged(object sender, EventArgs e)
@@ -39,6 +40,50 @@ namespace CMPE1600BrandonFooteICA2
             lblPayDueTotal.Text = "$0.00";
             lblRegPayTotal.Text = "$0.00";
             lblOvertimePayTotal.Text = "$0.00";
+            if (lblHourlyRate.Text != "" && lblHoursWorked.Text != "")
+                btnCalculate.Enabled = true;
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            int hoursWorked = 0;
+            int regHours = 0;
+            int hourlyRate = 0;
+            int totalPay = 0;
+            int overtimeHours = 0;
+            int totalHourlyPay = 0;
+            bool workedInput = false;
+            bool rateInput = false;
+            workedInput = int.TryParse(tbxHoursWorked.Text, out hoursWorked);
+            rateInput = int.TryParse(tbxHourlyRate.Text, out hourlyRate);
+            if (workedInput == false)
+            {
+                MessageBox.Show("Invalid hours worked input", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (rateInput == false)
+            {
+                MessageBox.Show("Invalid hourly rate value.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (hoursWorked < 40)
+                {
+                    regHours = hoursWorked;
+                    overtimeHours = 0;
+                    totalPay = totalHourlyPay;
+                }
+                else
+                {
+                    regHours = 40;
+                    overtimeHours = hoursWorked - 40;
+                }
+
+                lblRegHoursOutput.Text = regHours.ToString();
+                lblOvertimeHoursOutput.Text = overtimeHours.ToString();
+                lblRegPayTotal.Text = (regHours * hourlyRate).ToString();
+                lblOvertimePayTotal.Text = (overtimeHours * (hourlyRate * 1.5)).ToString();
+                lblPayDueTotal.Text = ((regHours * hourlyRate) + (overtimeHours * (hourlyRate * 1.5))).ToString();
+            }
         }
     }
 }

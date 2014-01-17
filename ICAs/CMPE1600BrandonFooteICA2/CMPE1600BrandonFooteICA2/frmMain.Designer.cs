@@ -171,12 +171,15 @@
             // 
             // btnCalculate
             // 
+            this.btnCalculate.Enabled = false;
             this.btnCalculate.Location = new System.Drawing.Point(134, 246);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(75, 23);
             this.btnCalculate.TabIndex = 15;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.EnabledChanged += new System.EventHandler(this.tbxHourlyRate_TextChanged);
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
             // frmMain
             // 
