@@ -11,7 +11,7 @@ namespace CMPE1600BrandonFooteICA2
 {
     public partial class frmMain : Form
     {
-
+        
         public frmMain()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace CMPE1600BrandonFooteICA2
             lblPayDueTotal.Text = "$0.00";
             lblRegPayTotal.Text = "$0.00";
             lblOvertimePayTotal.Text = "$0.00";
-            if (tbxHourlyRate.Text == "" && tbxHoursWorked.Text == "")
+            if (tbxHourlyRate.Text == "" || tbxHoursWorked.Text == "")
                 btnCalculate.Enabled = false;
             else
                 btnCalculate.Enabled = true;
@@ -42,7 +42,7 @@ namespace CMPE1600BrandonFooteICA2
             lblPayDueTotal.Text = "$0.00";
             lblRegPayTotal.Text = "$0.00";
             lblOvertimePayTotal.Text = "$0.00";
-            if (tbxHourlyRate.Text == "" && tbxHoursWorked.Text == "")
+            if (tbxHourlyRate.Text == "" || tbxHoursWorked.Text == "")
                 btnCalculate.Enabled = false;
             else
                 btnCalculate.Enabled = true;

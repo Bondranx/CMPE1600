@@ -26,6 +26,8 @@ namespace CMPE1600BrandonFooteICA4
             lstbxMain.Items.Add(tbxInput.Text);
             tbxInput.Clear();
             lstbxMain.SetSelected((int)nudSelection.Value, true);
+
+            nudSelection.Maximum = lstbxMain.Items.Count - 1;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -43,12 +45,12 @@ namespace CMPE1600BrandonFooteICA4
             if (iFoundAt == ListBox.NoMatches)
             {
                 lblFoundLocation.Text = "Not Found!";
-                lblSelectionItem.Visible = true;
+                lblFoundLocation.Visible = true;
             }
             else
             {
                 lblFoundLocation.Text = iFoundAt.ToString();
-                lblSelectionItem.Visible = true;
+                lblFoundLocation.Visible = true;
             }
         }
 
@@ -71,6 +73,9 @@ namespace CMPE1600BrandonFooteICA4
                 lstbxMain.SetSelected((int)nudSelection.Value, true);
                 lblSelectionItem.Text = lstbxMain.SelectedItem.ToString();
                 lblSelectionItem.Visible = true;
+                e.SuppressKeyPress = true;
+
+                nudSelection.Maximum = lstbxMain.Items.Count - 1;
             }
         }
 
@@ -79,16 +84,27 @@ namespace CMPE1600BrandonFooteICA4
             lstbxMain.SetSelected((int)nudSelection.Value,true);
             lblSelectionItem.Text = lstbxMain.SelectedItem.ToString();
             lblSelectionItem.Visible = true;
+            
         }
 
         private void lstbxMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            lblSelectionItem.Text = lstbxMain.SelectedItem.ToString();
+            lblSelectionItem.Visible = true;
         }
 
         private void frmICA4_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbxInput_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+        }
+
+        private void lstbxMain_SizeChanged(object sender, EventArgs e)
+        {
         }
     }
 }

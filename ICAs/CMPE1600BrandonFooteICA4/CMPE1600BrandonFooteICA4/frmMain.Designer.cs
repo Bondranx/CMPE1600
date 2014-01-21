@@ -51,6 +51,7 @@
             this.tbxInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxInput_KeyDown);
             this.tbxInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxInput_KeyPress);
             this.tbxInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbxInput_KeyUp);
+            this.tbxInput.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.tbxInput_PreviewKeyDown);
             // 
             // btnAdd
             // 
@@ -108,6 +109,7 @@
             this.lstbxMain.Size = new System.Drawing.Size(135, 95);
             this.lstbxMain.TabIndex = 6;
             this.lstbxMain.SelectedIndexChanged += new System.EventHandler(this.lstbxMain_SelectedIndexChanged);
+            this.lstbxMain.SizeChanged += new System.EventHandler(this.lstbxMain_SizeChanged);
             // 
             // lblSelected
             // 
