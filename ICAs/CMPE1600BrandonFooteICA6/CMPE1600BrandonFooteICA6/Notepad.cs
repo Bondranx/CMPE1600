@@ -45,6 +45,7 @@ namespace CMPE1600BrandonFooteICA6
         {
             string FileName = null;
             string[] FilePath = null;
+            sfdSaveAs.Filter = "Text Files (.txt)|*.txt";
             if (sfdSaveAs.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter SRWrite;
@@ -53,7 +54,7 @@ namespace CMPE1600BrandonFooteICA6
                 Text = FilePath[FilePath.Length - 1];
                 try
                 {
-                    SRWrite = new StreamWriter(sfdSaveAs.FileName + ".txt");
+                    SRWrite = new StreamWriter(sfdSaveAs.FileName );
                     SRWrite.Write(tbxMain.Text);
                     SRWrite.Close();
                 }
