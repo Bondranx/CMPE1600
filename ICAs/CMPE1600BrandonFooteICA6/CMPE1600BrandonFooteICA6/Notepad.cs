@@ -27,18 +27,30 @@ namespace CMPE1600BrandonFooteICA6
             if (ofdOpen.ShowDialog() == DialogResult.OK)
             {
                 this.Text = ofdOpen.SafeFileName;
-                StreamReader SROpen = new StreamReader(ofdOpen.SafeFileName);
+                StreamReader SROpen;
+                try
+                {
+                    SROpen = new StreamReader(ofdOpen.FileName);
+                    tbxMain.Text = SROpen.ReadToEnd();
+                    SROpen.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
-            
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string FileName = null;
+            string[] FilePath = null;
             if (sfdSaveAs.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter SRWrite;
-                Text = sfdSaveAs.FileName;
-
+                FileName = sfdSaveAs.FileName;
+                FilePath = FileName.Split('\\');
+                Text = FilePath[FilePath.Length - 1];
                 try
                 {
                     SRWrite = new StreamWriter(sfdSaveAs.FileName + ".txt");
