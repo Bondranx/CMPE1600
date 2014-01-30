@@ -45,12 +45,12 @@ namespace CMPE1600BrandonFooteICA5
             num = "";
             tmrGame.Enabled = true;
             lblNumDisplay.Enabled = true;
-            tmrGame.Interval = 500;
+            
         }
 
         private void tmrGame_Tick(object sender, EventArgs e)
         {
-            
+            tmrGame.Interval = 500;
             count++;
             lblNumDisplay.Text = generator.Next(0, 10).ToString();
             num += lblNumDisplay.Text;
@@ -89,15 +89,15 @@ namespace CMPE1600BrandonFooteICA5
                         lblResultsDisplay.Text = "Incorrect! Computer's Number: " + number + ", Your Number: " + playerInput;
                     }
                     waitCount++;
-                    if (waitCount == 10)
-                    {
-                        pgbClear.Value = 10;
-                        tmrGame.Enabled = false;
-                        btnStartButton.Enabled = true;
-                        lblResultsDisplay.Visible = false;
-                        tbxUserInput.Clear();
-                        tbxUserInput.Enabled = false;
-                    }
+                        if (waitCount == 10)
+                        {
+                            pgbClear.Value = 10;
+                            tmrGame.Enabled = false;
+                            btnStartButton.Enabled = true;
+                            lblResultsDisplay.Visible = false;
+                            tbxUserInput.Clear();
+                            tbxUserInput.Enabled = false;
+                        }
                 }
             }
         }
