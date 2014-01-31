@@ -1,6 +1,6 @@
 ﻿namespace CMPE1600BrandonFooteICA6
 {
-    partial class Notepad
+    partial class frmNotepad
     {
         /// <summary>
         /// Required designer variable.
@@ -33,8 +33,8 @@
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbxMain = new System.Windows.Forms.TextBox();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbxMain = new System.Windows.Forms.TextBox();
             this.sfdSaveAs = new System.Windows.Forms.SaveFileDialog();
             this.ofdOpen = new System.Windows.Forms.OpenFileDialog();
             this.mnsMain.SuspendLayout();
@@ -65,7 +65,7 @@
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -73,7 +73,7 @@
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -85,14 +85,6 @@
             this.saveAsToolStripMenuItem.Text = "Save As...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
-            // tbxMain
-            // 
-            this.tbxMain.Location = new System.Drawing.Point(0, 27);
-            this.tbxMain.Multiline = true;
-            this.tbxMain.Name = "tbxMain";
-            this.tbxMain.Size = new System.Drawing.Size(284, 237);
-            this.tbxMain.TabIndex = 1;
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -101,16 +93,26 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // Notepad
+            // tbxMain
+            // 
+            this.tbxMain.Location = new System.Drawing.Point(0, 27);
+            this.tbxMain.Multiline = true;
+            this.tbxMain.Name = "tbxMain";
+            this.tbxMain.Size = new System.Drawing.Size(284, 237);
+            this.tbxMain.TabIndex = 1;
+            // 
+            // frmNotepad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.tbxMain);
             this.Controls.Add(this.mnsMain);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.mnsMain;
-            this.Name = "Notepad";
+            this.Name = "frmNotepad";
             this.Text = "Notepad";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNotepad_FormClosing);
             this.mnsMain.ResumeLayout(false);
             this.mnsMain.PerformLayout();
             this.ResumeLayout(false);

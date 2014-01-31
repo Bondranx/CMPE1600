@@ -15,7 +15,7 @@ namespace CMPE1600BrandonFooteICA6
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Notepad());
+            Application.Run(new frmNotepad());
         }
     }
 }
