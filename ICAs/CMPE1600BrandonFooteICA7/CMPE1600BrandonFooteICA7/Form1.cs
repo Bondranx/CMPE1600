@@ -15,8 +15,10 @@ namespace CMPE1600BrandonFooteICA7
     {
         public int xPos = 15;
         public int yPos = 15;
+        public int mover = 1;
         CDrawer canvas = new CDrawer(600, 600);
         public Color newColor = new Color();
+        public Color borderColor = new Color();
 
         
         public Form1()
@@ -27,13 +29,31 @@ namespace CMPE1600BrandonFooteICA7
         private void Form1_Load(object sender, EventArgs e)
         {
             canvas.Scale = 20;
-            canvas.AddCenteredEllipse(xPos, yPos, 1, 1, Color.Red);
+            borderColor = Color.Black;
+            canvas.AddCenteredEllipse(xPos, yPos, 1, 1, Color.Red, 1, borderColor);
             newColor = Color.Red;
+            
         }
         
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             
+
+            if (e.KeyCode == Keys.ShiftKey)
+            {
+                mover = 2;
+            }
+
+            if (e.KeyCode == Keys.ControlKey)
+            {
+                mover = 3;
+            }
+
+            if (e.Handled = e.Alt)
+            {
+                mover = 4;
+            }
+
             if (e.KeyCode == Keys.B)
             {
                 newColor = Color.Blue;
@@ -49,31 +69,53 @@ namespace CMPE1600BrandonFooteICA7
 
             if (e.KeyCode == Keys.Up)
             {
-                yPos -=1;
+                yPos -=mover;
                 if (yPos < 0)
                     yPos = 30;
-                canvas.AddCenteredEllipse(xPos, yPos, 1, 1, newColor);
+                canvas.AddCenteredEllipse(xPos, yPos, 1, 1, newColor, 1, borderColor);
             }
             else if (e.KeyCode == Keys.Down)
             {
-                yPos += 1;
+                yPos += mover;
                 if (yPos > 30)
                     yPos = 0;
-                canvas.AddCenteredEllipse(xPos, yPos, 1, 1, newColor);
+                canvas.AddCenteredEllipse(xPos, yPos, 1, 1, newColor, 1, borderColor);
             }
             else if (e.KeyCode == Keys.Right)
             {
-                xPos += 1;
+                xPos += mover;
                 if (xPos > 30)
                     xPos = 0;
-                canvas.AddCenteredEllipse(xPos, yPos, 1, 1, newColor);
+                canvas.AddCenteredEllipse(xPos, yPos, 1, 1, newColor, 1, borderColor);
             }
             else if (e.KeyCode == Keys.Left)
             {
-                xPos -= 1;
+                xPos -= mover;
                 if (xPos < 0)
                     xPos = 30;
-                canvas.AddCenteredEllipse(xPos, yPos, 1, 1, newColor);
+                canvas.AddCenteredEllipse(xPos, yPos, 1, 1, newColor, 1, borderColor);
+            }
+
+            if (e.KeyCode == Keys.X)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ShiftKey)
+            {
+                mover = 1;
+            }
+
+            if (e.KeyCode == Keys.ControlKey)
+            {
+                mover = 1;
+            }
+            if (e.Handled = e.Alt)
+            {
+                mover = 1;
             }
         }
     }
