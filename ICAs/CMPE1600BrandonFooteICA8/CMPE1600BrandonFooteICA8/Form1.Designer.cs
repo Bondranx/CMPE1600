@@ -84,10 +84,11 @@
             this.btnColor.TabIndex = 1;
             this.btnColor.Text = "Color";
             this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // lblColor
             // 
-            this.lblColor.Location = new System.Drawing.Point(196, 31);
+            this.lblColor.Location = new System.Drawing.Point(196, 28);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(75, 23);
             this.lblColor.TabIndex = 2;
@@ -105,10 +106,15 @@
             // 
             // tbSize
             // 
+            this.tbSize.LargeChange = 10;
             this.tbSize.Location = new System.Drawing.Point(12, 111);
+            this.tbSize.Maximum = 100;
+            this.tbSize.Minimum = 10;
             this.tbSize.Name = "tbSize";
             this.tbSize.Size = new System.Drawing.Size(259, 45);
             this.tbSize.TabIndex = 4;
+            this.tbSize.TickFrequency = 10;
+            this.tbSize.Value = 10;
             // 
             // lblSize
             // 

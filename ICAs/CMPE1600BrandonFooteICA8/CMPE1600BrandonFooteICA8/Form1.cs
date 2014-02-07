@@ -14,6 +14,13 @@ namespace CMPE1600BrandonFooteICA8
         public ShapeDrawer()
         {
             InitializeComponent();
+            lblColor.Text = "";
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            lblColor.BackColor = colorDialog1.Color;
         }
     }
 }
