@@ -158,6 +158,7 @@
             this.Controls.Add(this.gbxShape);
             this.Name = "ShapeDrawer";
             this.Text = "ICA8";
+            this.Load += new System.EventHandler(this.ShapeDrawer_Load);
             this.gbxShape.ResumeLayout(false);
             this.gbxShape.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbSize)).EndInit();

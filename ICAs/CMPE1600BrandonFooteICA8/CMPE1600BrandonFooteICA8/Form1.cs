@@ -22,5 +22,14 @@ namespace CMPE1600BrandonFooteICA8
             colorDialog1.ShowDialog();
             lblColor.BackColor = colorDialog1.Color;
         }
+
+        private void ShapeDrawer_Load(object sender, EventArgs e)
+        {
+            if (rbtnCircle.Checked == true)
+            {
+                lblColor.Text = "you clicked circle";
+            }
+
+        }
     }
 }
