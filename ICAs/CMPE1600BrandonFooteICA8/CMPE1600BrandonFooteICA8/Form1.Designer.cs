@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbxShape = new System.Windows.Forms.GroupBox();
             this.rbtnCircle = new System.Windows.Forms.RadioButton();
             this.rbtnSquare = new System.Windows.Forms.RadioButton();
@@ -39,6 +40,7 @@
             this.lblSize = new System.Windows.Forms.Label();
             this.lblMinSize = new System.Windows.Forms.Label();
             this.lblMaxSize = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gbxShape.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbSize)).BeginInit();
             this.SuspendLayout();
@@ -143,6 +145,10 @@
             this.lblMaxSize.TabIndex = 7;
             this.lblMaxSize.Text = "100";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // ShapeDrawer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +186,7 @@
         private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.Label lblMinSize;
         private System.Windows.Forms.Label lblMaxSize;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

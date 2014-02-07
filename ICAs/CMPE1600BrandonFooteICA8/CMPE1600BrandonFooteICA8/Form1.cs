@@ -25,11 +25,14 @@ namespace CMPE1600BrandonFooteICA8
 
         private void ShapeDrawer_Load(object sender, EventArgs e)
         {
-            if (rbtnCircle.Checked == true)
-            {
-                lblColor.Text = "you clicked circle";
-            }
+            timer1.Interval = 100;
+            timer1.Enabled = true;
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+                
         }
     }
 }
