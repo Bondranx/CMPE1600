@@ -1,6 +1,6 @@
 ﻿namespace CMPE1600BrandonFooteICA8
 {
-    partial class Form1
+    partial class ShapeDrawer
     {
         /// <summary>
         /// Required designer variable.
@@ -35,12 +35,12 @@
             this.lblColor = new System.Windows.Forms.Label();
             this.chbxBorder = new System.Windows.Forms.CheckBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.tbSize = new System.Windows.Forms.TrackBar();
             this.lblSize = new System.Windows.Forms.Label();
             this.lblMinSize = new System.Windows.Forms.Label();
             this.lblMaxSize = new System.Windows.Forms.Label();
             this.gbxShape.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSize)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxShape
@@ -103,17 +103,17 @@
             this.chbxBorder.Text = "White Border";
             this.chbxBorder.UseVisualStyleBackColor = true;
             // 
-            // trackBar1
+            // tbSize
             // 
-            this.trackBar1.Location = new System.Drawing.Point(12, 111);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(259, 45);
-            this.trackBar1.TabIndex = 4;
+            this.tbSize.Location = new System.Drawing.Point(12, 111);
+            this.tbSize.Name = "tbSize";
+            this.tbSize.Size = new System.Drawing.Size(259, 45);
+            this.tbSize.TabIndex = 4;
             // 
             // lblSize
             // 
             this.lblSize.AutoSize = true;
-            this.lblSize.Location = new System.Drawing.Point(189, 95);
+            this.lblSize.Location = new System.Drawing.Point(128, 95);
             this.lblSize.Name = "lblSize";
             this.lblSize.Size = new System.Drawing.Size(27, 13);
             this.lblSize.TabIndex = 5;
@@ -137,7 +137,7 @@
             this.lblMaxSize.TabIndex = 7;
             this.lblMaxSize.Text = "100";
             // 
-            // Form1
+            // ShapeDrawer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -145,16 +145,16 @@
             this.Controls.Add(this.lblMaxSize);
             this.Controls.Add(this.lblMinSize);
             this.Controls.Add(this.lblSize);
-            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.tbSize);
             this.Controls.Add(this.chbxBorder);
             this.Controls.Add(this.lblColor);
             this.Controls.Add(this.btnColor);
             this.Controls.Add(this.gbxShape);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "ShapeDrawer";
+            this.Text = "ICA8";
             this.gbxShape.ResumeLayout(false);
             this.gbxShape.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +169,7 @@
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.CheckBox chbxBorder;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar tbSize;
         private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.Label lblMinSize;
         private System.Windows.Forms.Label lblMaxSize;

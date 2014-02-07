@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CMPE1600BrandonFooteICA8
 {
-    public partial class Form1 : Form
+    public partial class ShapeDrawer : Form
     {
-        public Form1()
+        public ShapeDrawer()
         {
             InitializeComponent();
         }
