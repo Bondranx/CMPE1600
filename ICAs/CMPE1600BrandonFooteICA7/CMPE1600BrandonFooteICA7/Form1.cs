@@ -37,35 +37,25 @@ namespace CMPE1600BrandonFooteICA7
         
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            
+            e.Handled = true;
+            if (e.KeyCode == Keys.F1)
+                borderColor = Color.White;
 
             if (e.KeyCode == Keys.ShiftKey)
-            {
                 mover = 2;
-            }
 
             if (e.KeyCode == Keys.ControlKey)
-            {
                 mover = 3;
-            }
 
             if (e.Handled = e.Alt)
-            {
                 mover = 4;
-            }
 
             if (e.KeyCode == Keys.B)
-            {
                 newColor = Color.Blue;
-            }
             else if (e.KeyCode == Keys.R)
-            {
                 newColor = Color.Red;
-            }
             else if (e.KeyCode == Keys.G)
-            {
                 newColor = Color.Green;
-            }
 
             if (e.KeyCode == Keys.Up)
             {
@@ -97,9 +87,7 @@ namespace CMPE1600BrandonFooteICA7
             }
 
             if (e.KeyCode == Keys.X)
-            {
                 Application.Exit();
-            }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -113,9 +101,14 @@ namespace CMPE1600BrandonFooteICA7
             {
                 mover = 1;
             }
+
             if (e.Handled = e.Alt)
             {
                 mover = 1;
+            }
+            if (e.KeyCode == Keys.F1)
+            {
+                borderColor = Color.Black;
             }
         }
     }
