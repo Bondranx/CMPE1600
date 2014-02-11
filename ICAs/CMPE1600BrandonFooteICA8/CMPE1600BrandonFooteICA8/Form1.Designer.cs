@@ -90,6 +90,7 @@
             // 
             // lblColor
             // 
+            this.lblColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblColor.Location = new System.Drawing.Point(196, 28);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(75, 23);

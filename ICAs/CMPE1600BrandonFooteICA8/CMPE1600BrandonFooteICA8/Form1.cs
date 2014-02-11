@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GDIDrawer;
 
 namespace CMPE1600BrandonFooteICA8
 {
     public partial class ShapeDrawer : Form
     {
+        CDrawer Canvas = new CDrawer();
         public ShapeDrawer()
         {
             InitializeComponent();
@@ -31,8 +33,28 @@ namespace CMPE1600BrandonFooteICA8
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-                
+            Color Border = new Color();
+            Point Coords;
+            bool clicked = false;
+            clicked = Canvas.GetLastMouseLeftClick(out Coords);
+            if (rbtnCircle.Checked == true && clicked == true)
+            {
+                if (chbxBorder.Checked == true)
+                    Border = Color.White;
+                else
+                    Border = Color.Black;
+                Console.WriteLine("You picked circle");
+                Canvas.AddCenteredEllipse(Coords.X, Coords.Y, tbSize.Value,tbSize.Value, colorDialog1.Color, 2, Border);
+            }
+            else if (rbtnSquare.Checked == true && clicked == true)
+            {
+                if (chbxBorder.Checked == true)
+                    Border = Color.White;
+                else
+                    Border = Color.Black;
+                Console.WriteLine("You picked square");
+                Canvas.AddCenteredRectangle(Coords.X, Coords.Y, tbSize.Value, tbSize.Value, colorDialog1.Color, 2, Border);
+            }
         }
     }
 }
