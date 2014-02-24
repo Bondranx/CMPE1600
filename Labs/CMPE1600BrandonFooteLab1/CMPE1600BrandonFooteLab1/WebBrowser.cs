@@ -104,7 +104,7 @@ namespace CMPE1600BrandonFooteLab1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "BinaryReaderExample");
+                Console.WriteLine(ex);
             }
             foreach (Bookmark i in Bookmarks)
             {
