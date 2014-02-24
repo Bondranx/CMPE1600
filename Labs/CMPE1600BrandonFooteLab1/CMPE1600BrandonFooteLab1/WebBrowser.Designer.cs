@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWebBrowser));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookmarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addBookmarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeBookmarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lstbxBookmarks = new System.Windows.Forms.ListBox();
             this.wbbBrowserWindow = new System.Windows.Forms.WebBrowser();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -72,13 +72,20 @@
             this.fToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fToolStripMenuItem.Text = "File";
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // bookmarksToolStripMenuItem
             // 
             this.bookmarksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addBookmarkToolStripMenuItem,
             this.removeBookmarkToolStripMenuItem});
             this.bookmarksToolStripMenuItem.Name = "bookmarksToolStripMenuItem";
-            this.bookmarksToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.bookmarksToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.bookmarksToolStripMenuItem.Text = "Bookmarks";
             // 
             // addBookmarkToolStripMenuItem
@@ -205,13 +212,6 @@
             this.wbbBrowserWindow.Url = new System.Uri("http://www.google.com", System.UriKind.Absolute);
             this.wbbBrowserWindow.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wbbBrowserWindow_DocumentCompleted);
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // frmWebBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +222,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmWebBrowser";
             this.Text = "Web Browser";
+            this.Load += new System.EventHandler(this.frmWebBrowser_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

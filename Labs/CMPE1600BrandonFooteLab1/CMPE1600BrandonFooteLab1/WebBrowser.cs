@@ -7,9 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary; 
 
 namespace CMPE1600BrandonFooteLab1
 {
+    [Serializable]
     public struct Bookmark
     {
         public string _SiteName;
@@ -25,12 +29,10 @@ namespace CMPE1600BrandonFooteLab1
             return string.Format(_URL.ToString());
         }
     }
+    [Serializable]
     public partial class frmWebBrowser : Form
     {
-
         public List<Bookmark> Bookmarks = new List<Bookmark>();
-
-
         public frmWebBrowser()
         {
             InitializeComponent();
@@ -66,6 +68,19 @@ namespace CMPE1600BrandonFooteLab1
             Bookmark newBookmark = new Bookmark(wbbBrowserWindow.DocumentTitle, wbbBrowserWindow.Url);
             Bookmarks.Add(newBookmark);
             lstbxBookmarks.Items.Add(newBookmark._SiteName);
+
+            try
+            {
+                FileStream newBookmarks = new FileStream("Bookmarks.bin", FileMode.Append, FileAccess.Write);
+                BinaryFormatter fileCreater = new BinaryFormatter();
+
+                fileCreater.Serialize(newBookmarks, Bookmarks);
+                newBookmarks.Close();
+            }
+            catch (Exception i)
+            {
+                Console.WriteLine(i);
+            }
         }
 
         private void wbbBrowserWindow_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -77,5 +92,25 @@ namespace CMPE1600BrandonFooteLab1
         {
             wbbBrowserWindow.GoForward();
         }
+
+        private void frmWebBrowser_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                FileStream readBookmarks = new FileStream("Bookmarks.bin", FileMode.Open, FileAccess.Read);
+                BinaryFormatter reader = new BinaryFormatter();
+                Bookmarks = (List<Bookmark>)reader.Deserialize(readBookmarks);
+                readBookmarks.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "BinaryReaderExample");
+            }
+            foreach (Bookmark i in Bookmarks)
+            {
+                lstbxBookmarks.Items.Add(i._SiteName);
+            }
+        }
+
     }
 }
