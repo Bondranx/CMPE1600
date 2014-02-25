@@ -39,12 +39,16 @@
             this.tsbtnBackButton = new System.Windows.Forms.ToolStripButton();
             this.tsbtnForwardButton = new System.Windows.Forms.ToolStripButton();
             this.tslblAddress = new System.Windows.Forms.ToolStripLabel();
-            this.tstbxAddressBar = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.tsbtnGoButton = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
             this.lstbxBookmarks = new System.Windows.Forms.ListBox();
             this.wbbBrowserWindow = new System.Windows.Forms.WebBrowser();
+            this.tsbtnHomeButton = new System.Windows.Forms.ToolStripButton();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -57,6 +61,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fToolStripMenuItem,
+            this.historyToolStripMenuItem,
             this.bookmarksToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -83,7 +88,8 @@
             // 
             this.bookmarksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addBookmarkToolStripMenuItem,
-            this.removeBookmarkToolStripMenuItem});
+            this.removeBookmarkToolStripMenuItem,
+            this.clearAllToolStripMenuItem});
             this.bookmarksToolStripMenuItem.Name = "bookmarksToolStripMenuItem";
             this.bookmarksToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.bookmarksToolStripMenuItem.Text = "Bookmarks";
@@ -100,14 +106,16 @@
             this.removeBookmarkToolStripMenuItem.Name = "removeBookmarkToolStripMenuItem";
             this.removeBookmarkToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.removeBookmarkToolStripMenuItem.Text = "Remove Bookmark";
+            this.removeBookmarkToolStripMenuItem.Click += new System.EventHandler(this.removeBookmarkToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnHomeButton,
             this.tsbtnBackButton,
             this.tsbtnForwardButton,
             this.tslblAddress,
-            this.tstbxAddressBar,
+            this.toolStripComboBox1,
             this.tsbtnGoButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
@@ -120,9 +128,9 @@
             this.tsbtnBackButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbtnBackButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnBackButton.Name = "tsbtnBackButton";
-            this.tsbtnBackButton.Size = new System.Drawing.Size(36, 22);
+            this.tsbtnBackButton.Size = new System.Drawing.Size(27, 22);
             this.tsbtnBackButton.Tag = "Back";
-            this.tsbtnBackButton.Text = "Back";
+            this.tsbtnBackButton.Text = "<<";
             this.tsbtnBackButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.tsbtnBackButton.ToolTipText = "Move back one page";
             this.tsbtnBackButton.Click += new System.EventHandler(this.tsbtnBackButton_Click);
@@ -133,8 +141,8 @@
             this.tsbtnForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnForwardButton.Image")));
             this.tsbtnForwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnForwardButton.Name = "tsbtnForwardButton";
-            this.tsbtnForwardButton.Size = new System.Drawing.Size(54, 22);
-            this.tsbtnForwardButton.Text = "Forward";
+            this.tsbtnForwardButton.Size = new System.Drawing.Size(27, 22);
+            this.tsbtnForwardButton.Text = ">>";
             this.tsbtnForwardButton.ToolTipText = "Move forward one page";
             this.tsbtnForwardButton.Click += new System.EventHandler(this.tsbtnForwardButton_Click);
             // 
@@ -144,13 +152,12 @@
             this.tslblAddress.Size = new System.Drawing.Size(52, 22);
             this.tslblAddress.Text = "Address:";
             // 
-            // tstbxAddressBar
+            // toolStripComboBox1
             // 
-            this.tstbxAddressBar.AutoSize = false;
-            this.tstbxAddressBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tstbxAddressBar.Name = "tstbxAddressBar";
-            this.tstbxAddressBar.Size = new System.Drawing.Size(300, 23);
-            this.tstbxAddressBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbxAddressBar_KeyDown);
+            this.toolStripComboBox1.MaxDropDownItems = 100;
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(600, 25);
+            this.toolStripComboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripComboBox1_KeyDown);
             // 
             // tsbtnGoButton
             // 
@@ -209,8 +216,40 @@
             this.wbbBrowserWindow.Name = "wbbBrowserWindow";
             this.wbbBrowserWindow.Size = new System.Drawing.Size(1007, 511);
             this.wbbBrowserWindow.TabIndex = 0;
-            this.wbbBrowserWindow.Url = new System.Uri("http://www.google.com", System.UriKind.Absolute);
+            this.wbbBrowserWindow.Url = new System.Uri("http://www.nait.ca", System.UriKind.Absolute);
             this.wbbBrowserWindow.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wbbBrowserWindow_DocumentCompleted);
+            // 
+            // tsbtnHomeButton
+            // 
+            this.tsbtnHomeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnHomeButton.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnHomeButton.Image")));
+            this.tsbtnHomeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnHomeButton.Name = "tsbtnHomeButton";
+            this.tsbtnHomeButton.Size = new System.Drawing.Size(44, 22);
+            this.tsbtnHomeButton.Text = "Home";
+            this.tsbtnHomeButton.Click += new System.EventHandler(this.tsbtnHomeButton_Click);
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearHistoryToolStripMenuItem});
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.historyToolStripMenuItem.Text = "History";
+            // 
+            // clearHistoryToolStripMenuItem
+            // 
+            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
+            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clearHistoryToolStripMenuItem.Text = "Clear History";
+            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
+            // 
+            // clearAllToolStripMenuItem
+            // 
+            this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
+            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.clearAllToolStripMenuItem.Text = "Clear All";
+            this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
             // 
             // frmWebBrowser
             // 
@@ -243,7 +282,6 @@
         private System.Windows.Forms.ToolStripButton tsbtnBackButton;
         private System.Windows.Forms.ToolStripButton tsbtnForwardButton;
         private System.Windows.Forms.ToolStripLabel tslblAddress;
-        private System.Windows.Forms.ToolStripTextBox tstbxAddressBar;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.WebBrowser wbbBrowserWindow;
         private System.Windows.Forms.ToolStripMenuItem fToolStripMenuItem;
@@ -254,6 +292,11 @@
         private System.Windows.Forms.ListBox lstbxBookmarks;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripButton tsbtnHomeButton;
+        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearAllToolStripMenuItem;
 
     }
 }
