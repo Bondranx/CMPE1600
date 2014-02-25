@@ -77,24 +77,19 @@ namespace CMPE1600BrandonFooteLab1
         }
         private void tsbtnGoButton_Click(object sender, EventArgs e)
         {
-            Uri uri = new Uri("http://" + toolStripComboBox1.Text);
+
+            Uri uri = new Uri("http://"+toolStripComboBox1.Text);
             wbbBrowserWindow.Url = uri;
         }
 
         private void addBookmarkToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Bookmark newBookmark = new Bookmark(wbbBrowserWindow.DocumentTitle, wbbBrowserWindow.Url);
+            
             Bookmarks.Add(newBookmark);
             lstbxBookmarks.Items.Add(newBookmark._SiteName);
 
             Bookmarking();
-        }
-
-        private void wbbBrowserWindow_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            this.Text = wbbBrowserWindow.DocumentTitle;
-            toolStripComboBox1.Items.Add(wbbBrowserWindow.Url);
-            toolStripComboBox1.Text = wbbBrowserWindow.Url.ToString();
         }
 
         private void frmWebBrowser_Load(object sender, EventArgs e)
@@ -114,6 +109,8 @@ namespace CMPE1600BrandonFooteLab1
             {
                 lstbxBookmarks.Items.Add(i._SiteName);
             }
+            toolStripComboBox1.Text = "http://www.nait.ca";
+            toolStripComboBox1.Items.Add(toolStripComboBox1.Text);
         }
 
         private void removeBookmarkToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,8 +127,15 @@ namespace CMPE1600BrandonFooteLab1
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Uri uri = new Uri("http://" + toolStripComboBox1.Text);
-                wbbBrowserWindow.Url = uri;
+                try
+                {
+                    Uri uri = new Uri("http://" + toolStripComboBox1.Text);
+                    wbbBrowserWindow.Url = uri;
+                }
+                catch (Exception i)
+                {
+                    MessageBox.Show("That is an invalid URL", "invalid", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                }
             }
         }
 
@@ -149,7 +153,60 @@ namespace CMPE1600BrandonFooteLab1
         private void clearAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lstbxBookmarks.Items.Clear();
-
+            Bookmarks.Clear();
+            Bookmarking();
         }
+
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Uri uri = new Uri(toolStripComboBox1.SelectedItem.ToString());
+            wbbBrowserWindow.Url = uri;
+        }
+
+        private void wbbBrowserWindow_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            int index = 0;
+            if (!wbbBrowserWindow.Url.ToString().Contains("http://www.nait.ca") && !toolStripComboBox1.Items.Contains(wbbBrowserWindow.Url))
+            {
+                this.Text = wbbBrowserWindow.DocumentTitle;
+                toolStripComboBox1.Text = wbbBrowserWindow.Url.ToString();
+                toolStripComboBox1.Items.Insert(0, wbbBrowserWindow.Url);
+            }
+            if (toolStripComboBox1.Items.Contains(wbbBrowserWindow.Url) == true)
+            {
+                index = toolStripComboBox1.Items.IndexOf(wbbBrowserWindow.Url);
+                toolStripComboBox1.Items.RemoveAt(index);
+                toolStripComboBox1.Items.Insert(0, wbbBrowserWindow.Url);
+            }
+        }
+
+        private void tsbtnRefresh_Click(object sender, EventArgs e)
+        {
+            wbbBrowserWindow.Refresh();
+        }
+
+        private void tsbtnStop_Click(object sender, EventArgs e)
+        {
+            wbbBrowserWindow.Stop();
+        }
+
+        private void gmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Uri uri = new Uri("http://www.gmail.com");
+            wbbBrowserWindow.Url = uri;
+        }
+
+        private void hotmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Uri uri = new Uri("http://www.hotmail.com");
+            wbbBrowserWindow.Url = uri;
+        }
+
+        private void facebookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Uri uri = new Uri("http://www.facebook.com");
+            wbbBrowserWindow.Url = uri;
+        }
+
     }
 }

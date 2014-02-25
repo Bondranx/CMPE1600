@@ -32,23 +32,30 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookmarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addBookmarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeBookmarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbtnHomeButton = new System.Windows.Forms.ToolStripButton();
             this.tsbtnBackButton = new System.Windows.Forms.ToolStripButton();
             this.tsbtnForwardButton = new System.Windows.Forms.ToolStripButton();
             this.tslblAddress = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.tsbtnGoButton = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnStop = new System.Windows.Forms.ToolStripButton();
+            this.tsdbtnCommon = new System.Windows.Forms.ToolStripDropDownButton();
+            this.emailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hotmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
             this.lstbxBookmarks = new System.Windows.Forms.ListBox();
             this.wbbBrowserWindow = new System.Windows.Forms.WebBrowser();
-            this.tsbtnHomeButton = new System.Windows.Forms.ToolStripButton();
-            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -65,7 +72,7 @@
             this.bookmarksToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,6 +90,21 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearHistoryToolStripMenuItem});
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.historyToolStripMenuItem.Text = "History";
+            // 
+            // clearHistoryToolStripMenuItem
+            // 
+            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
+            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.clearHistoryToolStripMenuItem.Text = "Clear History";
+            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
             // 
             // bookmarksToolStripMenuItem
             // 
@@ -108,6 +130,13 @@
             this.removeBookmarkToolStripMenuItem.Text = "Remove Bookmark";
             this.removeBookmarkToolStripMenuItem.Click += new System.EventHandler(this.removeBookmarkToolStripMenuItem_Click);
             // 
+            // clearAllToolStripMenuItem
+            // 
+            this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
+            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.clearAllToolStripMenuItem.Text = "Clear All";
+            this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -116,12 +145,25 @@
             this.tsbtnForwardButton,
             this.tslblAddress,
             this.toolStripComboBox1,
-            this.tsbtnGoButton});
+            this.tsbtnGoButton,
+            this.tsbtnRefresh,
+            this.tsbtnStop,
+            this.tsdbtnCommon});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1184, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1067, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbtnHomeButton
+            // 
+            this.tsbtnHomeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnHomeButton.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnHomeButton.Image")));
+            this.tsbtnHomeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnHomeButton.Name = "tsbtnHomeButton";
+            this.tsbtnHomeButton.Size = new System.Drawing.Size(44, 22);
+            this.tsbtnHomeButton.Text = "Home";
+            this.tsbtnHomeButton.Click += new System.EventHandler(this.tsbtnHomeButton_Click);
             // 
             // tsbtnBackButton
             // 
@@ -157,6 +199,7 @@
             this.toolStripComboBox1.MaxDropDownItems = 100;
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(600, 25);
+            this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
             this.toolStripComboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripComboBox1_KeyDown);
             // 
             // tsbtnGoButton
@@ -169,6 +212,71 @@
             this.tsbtnGoButton.Text = "Go";
             this.tsbtnGoButton.ToolTipText = "Navigate to selected URL";
             this.tsbtnGoButton.Click += new System.EventHandler(this.tsbtnGoButton_Click);
+            // 
+            // tsbtnRefresh
+            // 
+            this.tsbtnRefresh.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbtnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnRefresh.Image")));
+            this.tsbtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnRefresh.Name = "tsbtnRefresh";
+            this.tsbtnRefresh.Size = new System.Drawing.Size(50, 22);
+            this.tsbtnRefresh.Text = "Refresh";
+            this.tsbtnRefresh.Click += new System.EventHandler(this.tsbtnRefresh_Click);
+            // 
+            // tsbtnStop
+            // 
+            this.tsbtnStop.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbtnStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnStop.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnStop.Image")));
+            this.tsbtnStop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnStop.Name = "tsbtnStop";
+            this.tsbtnStop.Size = new System.Drawing.Size(35, 22);
+            this.tsbtnStop.Text = "Stop";
+            this.tsbtnStop.Click += new System.EventHandler(this.tsbtnStop_Click);
+            // 
+            // tsdbtnCommon
+            // 
+            this.tsdbtnCommon.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsdbtnCommon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsdbtnCommon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emailToolStripMenuItem,
+            this.facebookToolStripMenuItem});
+            this.tsdbtnCommon.Image = ((System.Drawing.Image)(resources.GetObject("tsdbtnCommon.Image")));
+            this.tsdbtnCommon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsdbtnCommon.Name = "tsdbtnCommon";
+            this.tsdbtnCommon.Size = new System.Drawing.Size(98, 22);
+            this.tsdbtnCommon.Text = "Common Sites";
+            // 
+            // emailToolStripMenuItem
+            // 
+            this.emailToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hotmailToolStripMenuItem,
+            this.gmailToolStripMenuItem});
+            this.emailToolStripMenuItem.Name = "emailToolStripMenuItem";
+            this.emailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.emailToolStripMenuItem.Text = "Email";
+            // 
+            // hotmailToolStripMenuItem
+            // 
+            this.hotmailToolStripMenuItem.Name = "hotmailToolStripMenuItem";
+            this.hotmailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hotmailToolStripMenuItem.Text = "Hotmail";
+            this.hotmailToolStripMenuItem.Click += new System.EventHandler(this.hotmailToolStripMenuItem_Click);
+            // 
+            // gmailToolStripMenuItem
+            // 
+            this.gmailToolStripMenuItem.Name = "gmailToolStripMenuItem";
+            this.gmailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gmailToolStripMenuItem.Text = "Gmail";
+            this.gmailToolStripMenuItem.Click += new System.EventHandler(this.gmailToolStripMenuItem_Click);
+            // 
+            // facebookToolStripMenuItem
+            // 
+            this.facebookToolStripMenuItem.Name = "facebookToolStripMenuItem";
+            this.facebookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facebookToolStripMenuItem.Text = "Facebook";
+            this.facebookToolStripMenuItem.Click += new System.EventHandler(this.facebookToolStripMenuItem_Click);
             // 
             // splitContainer1
             // 
@@ -186,7 +294,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.wbbBrowserWindow);
-            this.splitContainer1.Size = new System.Drawing.Size(1184, 513);
+            this.splitContainer1.Size = new System.Drawing.Size(1067, 513);
             this.splitContainer1.SplitterDistance = 171;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -202,6 +310,9 @@
             // 
             // lstbxBookmarks
             // 
+            this.lstbxBookmarks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lstbxBookmarks.FormattingEnabled = true;
             this.lstbxBookmarks.Location = new System.Drawing.Point(3, 21);
             this.lstbxBookmarks.Name = "lstbxBookmarks";
@@ -214,48 +325,16 @@
             this.wbbBrowserWindow.Location = new System.Drawing.Point(0, 0);
             this.wbbBrowserWindow.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbbBrowserWindow.Name = "wbbBrowserWindow";
-            this.wbbBrowserWindow.Size = new System.Drawing.Size(1007, 511);
+            this.wbbBrowserWindow.Size = new System.Drawing.Size(890, 511);
             this.wbbBrowserWindow.TabIndex = 0;
             this.wbbBrowserWindow.Url = new System.Uri("http://www.nait.ca", System.UriKind.Absolute);
-            this.wbbBrowserWindow.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wbbBrowserWindow_DocumentCompleted);
-            // 
-            // tsbtnHomeButton
-            // 
-            this.tsbtnHomeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbtnHomeButton.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnHomeButton.Image")));
-            this.tsbtnHomeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnHomeButton.Name = "tsbtnHomeButton";
-            this.tsbtnHomeButton.Size = new System.Drawing.Size(44, 22);
-            this.tsbtnHomeButton.Text = "Home";
-            this.tsbtnHomeButton.Click += new System.EventHandler(this.tsbtnHomeButton_Click);
-            // 
-            // historyToolStripMenuItem
-            // 
-            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clearHistoryToolStripMenuItem});
-            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.historyToolStripMenuItem.Text = "History";
-            // 
-            // clearHistoryToolStripMenuItem
-            // 
-            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
-            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.clearHistoryToolStripMenuItem.Text = "Clear History";
-            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
-            // 
-            // clearAllToolStripMenuItem
-            // 
-            this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
-            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.clearAllToolStripMenuItem.Text = "Clear All";
-            this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
+            this.wbbBrowserWindow.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.wbbBrowserWindow_Navigated);
             // 
             // frmWebBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 562);
+            this.ClientSize = new System.Drawing.Size(1067, 562);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -297,6 +376,13 @@
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton tsbtnRefresh;
+        private System.Windows.Forms.ToolStripButton tsbtnStop;
+        private System.Windows.Forms.ToolStripDropDownButton tsdbtnCommon;
+        private System.Windows.Forms.ToolStripMenuItem emailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hotmailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gmailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facebookToolStripMenuItem;
 
     }
 }
