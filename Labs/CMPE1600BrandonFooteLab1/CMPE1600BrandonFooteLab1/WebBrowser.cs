@@ -77,9 +77,16 @@ namespace CMPE1600BrandonFooteLab1
         }
         private void tsbtnGoButton_Click(object sender, EventArgs e)
         {
-
-            Uri uri = new Uri("http://"+toolStripComboBox1.Text);
-            wbbBrowserWindow.Url = uri;
+            if (!wbbBrowserWindow.Url.ToString().Contains("https://"))
+            {
+                Uri uri = new Uri("http://" + toolStripComboBox1.Text);
+                wbbBrowserWindow.Url = uri;
+            }
+            else
+            {
+                Uri uri = new Uri(toolStripComboBox1.Text);
+                wbbBrowserWindow.Url = uri;
+            }
         }
 
         private void addBookmarkToolStripMenuItem_Click(object sender, EventArgs e)
@@ -178,6 +185,7 @@ namespace CMPE1600BrandonFooteLab1
                 toolStripComboBox1.Items.RemoveAt(index);
                 toolStripComboBox1.Items.Insert(0, wbbBrowserWindow.Url);
             }
+            
         }
 
         private void tsbtnRefresh_Click(object sender, EventArgs e)
