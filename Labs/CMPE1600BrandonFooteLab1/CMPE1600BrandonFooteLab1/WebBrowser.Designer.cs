@@ -53,6 +53,8 @@
             this.gmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnAddBookmark = new System.Windows.Forms.Button();
+            this.tbxBookmarkName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lstbxBookmarks = new System.Windows.Forms.ListBox();
             this.wbbBrowserWindow = new System.Windows.Forms.WebBrowser();
@@ -118,6 +120,7 @@
             // 
             // addBookmarkToolStripMenuItem
             // 
+            this.addBookmarkToolStripMenuItem.Enabled = false;
             this.addBookmarkToolStripMenuItem.Name = "addBookmarkToolStripMenuItem";
             this.addBookmarkToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.addBookmarkToolStripMenuItem.Text = "Add Bookmark";
@@ -254,27 +257,27 @@
             this.hotmailToolStripMenuItem,
             this.gmailToolStripMenuItem});
             this.emailToolStripMenuItem.Name = "emailToolStripMenuItem";
-            this.emailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.emailToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.emailToolStripMenuItem.Text = "Email";
             // 
             // hotmailToolStripMenuItem
             // 
             this.hotmailToolStripMenuItem.Name = "hotmailToolStripMenuItem";
-            this.hotmailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hotmailToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.hotmailToolStripMenuItem.Text = "Hotmail";
             this.hotmailToolStripMenuItem.Click += new System.EventHandler(this.hotmailToolStripMenuItem_Click);
             // 
             // gmailToolStripMenuItem
             // 
             this.gmailToolStripMenuItem.Name = "gmailToolStripMenuItem";
-            this.gmailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gmailToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.gmailToolStripMenuItem.Text = "Gmail";
             this.gmailToolStripMenuItem.Click += new System.EventHandler(this.gmailToolStripMenuItem_Click);
             // 
             // facebookToolStripMenuItem
             // 
             this.facebookToolStripMenuItem.Name = "facebookToolStripMenuItem";
-            this.facebookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facebookToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.facebookToolStripMenuItem.Text = "Facebook";
             this.facebookToolStripMenuItem.Click += new System.EventHandler(this.facebookToolStripMenuItem_Click);
             // 
@@ -288,6 +291,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnAddBookmark);
+            this.splitContainer1.Panel1.Controls.Add(this.tbxBookmarkName);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.lstbxBookmarks);
             // 
@@ -297,6 +302,25 @@
             this.splitContainer1.Size = new System.Drawing.Size(1067, 513);
             this.splitContainer1.SplitterDistance = 171;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // btnAddBookmark
+            // 
+            this.btnAddBookmark.Enabled = false;
+            this.btnAddBookmark.Location = new System.Drawing.Point(120, 18);
+            this.btnAddBookmark.Name = "btnAddBookmark";
+            this.btnAddBookmark.Size = new System.Drawing.Size(46, 23);
+            this.btnAddBookmark.TabIndex = 3;
+            this.btnAddBookmark.Text = "Add";
+            this.btnAddBookmark.UseVisualStyleBackColor = true;
+            this.btnAddBookmark.Click += new System.EventHandler(this.btnAddBookmark_Click);
+            // 
+            // tbxBookmarkName
+            // 
+            this.tbxBookmarkName.Location = new System.Drawing.Point(3, 21);
+            this.tbxBookmarkName.Name = "tbxBookmarkName";
+            this.tbxBookmarkName.Size = new System.Drawing.Size(111, 20);
+            this.tbxBookmarkName.TabIndex = 2;
+            this.tbxBookmarkName.TextChanged += new System.EventHandler(this.tbxBookmarkName_TextChanged);
             // 
             // label1
             // 
@@ -310,14 +334,15 @@
             // 
             // lstbxBookmarks
             // 
-            this.lstbxBookmarks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstbxBookmarks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstbxBookmarks.FormattingEnabled = true;
-            this.lstbxBookmarks.Location = new System.Drawing.Point(3, 21);
+            this.lstbxBookmarks.Location = new System.Drawing.Point(3, 47);
             this.lstbxBookmarks.Name = "lstbxBookmarks";
-            this.lstbxBookmarks.Size = new System.Drawing.Size(163, 485);
+            this.lstbxBookmarks.Size = new System.Drawing.Size(163, 459);
             this.lstbxBookmarks.TabIndex = 0;
+            this.lstbxBookmarks.SelectedIndexChanged += new System.EventHandler(this.lstbxBookmarks_SelectedIndexChanged);
             // 
             // wbbBrowserWindow
             // 
@@ -346,6 +371,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -383,6 +409,8 @@
         private System.Windows.Forms.ToolStripMenuItem hotmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facebookToolStripMenuItem;
+        private System.Windows.Forms.Button btnAddBookmark;
+        private System.Windows.Forms.TextBox tbxBookmarkName;
 
     }
 }
