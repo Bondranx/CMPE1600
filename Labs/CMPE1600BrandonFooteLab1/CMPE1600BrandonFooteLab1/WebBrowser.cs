@@ -412,7 +412,7 @@ namespace CMPE1600BrandonFooteLab1
 
         private void lstbxBookmarks_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lstbxBookmarks.SelectedIndex == 1)
+            if(lstbxBookmarks.SelectedIndex != -1)
                 wbbBrowserWindow.Url = Bookmarks[(lstbxBookmarks.SelectedIndex)]._URL;
         }
     }
