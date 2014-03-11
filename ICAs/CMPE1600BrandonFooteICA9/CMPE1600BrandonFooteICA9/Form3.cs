@@ -11,9 +11,25 @@ namespace CMPE1600BrandonFooteICA9
 {
     public partial class frmColor : Form
     {
+        public static Color newColor = new Color();
         public frmColor()
         {
             InitializeComponent();
+        }
+
+        private void rdbRed_CheckedChanged(object sender, EventArgs e)
+        {
+            newColor = Color.Red;
+        }
+
+        private void rdbGreen_CheckedChanged(object sender, EventArgs e)
+        {
+            newColor = Color.Green;
+        }
+
+        private void rdbBlue_CheckedChanged(object sender, EventArgs e)
+        {
+            newColor = Color.Blue;
         }
     }
 }

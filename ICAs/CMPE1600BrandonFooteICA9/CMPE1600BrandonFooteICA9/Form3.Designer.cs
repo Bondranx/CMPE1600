@@ -47,7 +47,7 @@
             this.grpbxColor.Size = new System.Drawing.Size(128, 100);
             this.grpbxColor.TabIndex = 0;
             this.grpbxColor.TabStop = false;
-            this.grpbxColor.Text = "groupBox1";
+            this.grpbxColor.Text = "Color";
             // 
             // rdbRed
             // 
@@ -59,6 +59,7 @@
             this.rdbRed.TabStop = true;
             this.rdbRed.Text = "Red";
             this.rdbRed.UseVisualStyleBackColor = true;
+            this.rdbRed.CheckedChanged += new System.EventHandler(this.rdbRed_CheckedChanged);
             // 
             // rdbGreen
             // 
@@ -70,6 +71,7 @@
             this.rdbGreen.TabStop = true;
             this.rdbGreen.Text = "Green";
             this.rdbGreen.UseVisualStyleBackColor = true;
+            this.rdbGreen.CheckedChanged += new System.EventHandler(this.rdbGreen_CheckedChanged);
             // 
             // rdbBlue
             // 
@@ -81,6 +83,7 @@
             this.rdbBlue.TabStop = true;
             this.rdbBlue.Text = "Blue";
             this.rdbBlue.UseVisualStyleBackColor = true;
+            this.rdbBlue.CheckedChanged += new System.EventHandler(this.rdbBlue_CheckedChanged);
             // 
             // btnOK
             // 
@@ -108,6 +111,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.grpbxColor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmColor";
             this.Text = "Color";
             this.grpbxColor.ResumeLayout(false);

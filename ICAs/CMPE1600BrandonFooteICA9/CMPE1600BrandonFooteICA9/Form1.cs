@@ -19,7 +19,7 @@ namespace CMPE1600BrandonFooteICA9
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
