@@ -40,6 +40,7 @@
             this.btnSize.TabIndex = 0;
             this.btnSize.Text = "Size";
             this.btnSize.UseVisualStyleBackColor = true;
+            this.btnSize.Click += new System.EventHandler(this.btnSize_Click);
             // 
             // btnColor
             // 
