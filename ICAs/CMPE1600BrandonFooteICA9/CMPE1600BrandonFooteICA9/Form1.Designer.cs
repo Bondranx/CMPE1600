@@ -58,7 +58,8 @@
             this.Controls.Add(this.btnColor);
             this.Controls.Add(this.btnSize);
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "Main";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
 
         }
