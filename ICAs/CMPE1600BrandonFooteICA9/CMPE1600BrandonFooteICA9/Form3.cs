@@ -31,5 +31,10 @@ namespace CMPE1600BrandonFooteICA9
         {
             newColor = Color.Blue;
         }
+
+        private void frmColor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

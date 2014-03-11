@@ -117,6 +117,7 @@
             this.MinimizeBox = false;
             this.Name = "frmColor";
             this.Text = "Color";
+            this.Load += new System.EventHandler(this.frmColor_Load);
             this.grpbxColor.ResumeLayout(false);
             this.grpbxColor.PerformLayout();
             this.ResumeLayout(false);
