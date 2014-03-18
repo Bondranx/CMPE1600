@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.grpbxColor = new System.Windows.Forms.GroupBox();
-            this.rdbRed = new System.Windows.Forms.RadioButton();
-            this.rdbGreen = new System.Windows.Forms.RadioButton();
             this.rdbBlue = new System.Windows.Forms.RadioButton();
+            this.rdbGreen = new System.Windows.Forms.RadioButton();
+            this.rdbRed = new System.Windows.Forms.RadioButton();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.grpbxColor.SuspendLayout();
@@ -49,17 +49,17 @@
             this.grpbxColor.TabStop = false;
             this.grpbxColor.Text = "Color";
             // 
-            // rdbRed
+            // rdbBlue
             // 
-            this.rdbRed.AutoSize = true;
-            this.rdbRed.Location = new System.Drawing.Point(11, 22);
-            this.rdbRed.Name = "rdbRed";
-            this.rdbRed.Size = new System.Drawing.Size(45, 17);
-            this.rdbRed.TabIndex = 0;
-            this.rdbRed.TabStop = true;
-            this.rdbRed.Text = "Red";
-            this.rdbRed.UseVisualStyleBackColor = true;
-            this.rdbRed.CheckedChanged += new System.EventHandler(this.rdbRed_CheckedChanged);
+            this.rdbBlue.AutoSize = true;
+            this.rdbBlue.Location = new System.Drawing.Point(11, 72);
+            this.rdbBlue.Name = "rdbBlue";
+            this.rdbBlue.Size = new System.Drawing.Size(46, 17);
+            this.rdbBlue.TabIndex = 2;
+            this.rdbBlue.TabStop = true;
+            this.rdbBlue.Text = "Blue";
+            this.rdbBlue.UseVisualStyleBackColor = true;
+            this.rdbBlue.CheckedChanged += new System.EventHandler(this.rdbBlue_CheckedChanged);
             // 
             // rdbGreen
             // 
@@ -73,17 +73,17 @@
             this.rdbGreen.UseVisualStyleBackColor = true;
             this.rdbGreen.CheckedChanged += new System.EventHandler(this.rdbGreen_CheckedChanged);
             // 
-            // rdbBlue
+            // rdbRed
             // 
-            this.rdbBlue.AutoSize = true;
-            this.rdbBlue.Location = new System.Drawing.Point(11, 72);
-            this.rdbBlue.Name = "rdbBlue";
-            this.rdbBlue.Size = new System.Drawing.Size(46, 17);
-            this.rdbBlue.TabIndex = 2;
-            this.rdbBlue.TabStop = true;
-            this.rdbBlue.Text = "Blue";
-            this.rdbBlue.UseVisualStyleBackColor = true;
-            this.rdbBlue.CheckedChanged += new System.EventHandler(this.rdbBlue_CheckedChanged);
+            this.rdbRed.AutoSize = true;
+            this.rdbRed.Location = new System.Drawing.Point(11, 22);
+            this.rdbRed.Name = "rdbRed";
+            this.rdbRed.Size = new System.Drawing.Size(45, 17);
+            this.rdbRed.TabIndex = 0;
+            this.rdbRed.TabStop = true;
+            this.rdbRed.Text = "Red";
+            this.rdbRed.UseVisualStyleBackColor = true;
+            this.rdbRed.CheckedChanged += new System.EventHandler(this.rdbRed_CheckedChanged);
             // 
             // btnOK
             // 
@@ -93,6 +93,7 @@
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
@@ -102,6 +103,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmColor
             // 

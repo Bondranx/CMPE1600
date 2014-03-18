@@ -11,7 +11,7 @@ namespace CMPE1600BrandonFooteICA9
 {
     public partial class frmColor : Form
     {
-        public static Color newColor = new Color();
+        public Color newColor = new Color();
         public frmColor()
         {
             InitializeComponent();
@@ -35,6 +35,16 @@ namespace CMPE1600BrandonFooteICA9
         private void frmColor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            DialogResult = System.Windows.Forms.DialogResult.OK;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
     }
 }

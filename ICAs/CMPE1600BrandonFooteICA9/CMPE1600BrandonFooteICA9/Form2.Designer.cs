@@ -48,6 +48,7 @@
             this.tkbrSizeSelect.TabIndex = 0;
             this.tkbrSizeSelect.TickFrequency = 5;
             this.tkbrSizeSelect.Value = 55;
+            this.tkbrSizeSelect.Scroll += new System.EventHandler(this.tkbrSizeSelect_Scroll);
             // 
             // btnOK
             // 
@@ -57,6 +58,7 @@
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
@@ -66,6 +68,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblMin
             // 
@@ -101,6 +104,7 @@
             this.MinimizeBox = false;
             this.Name = "frmSize";
             this.Text = "Size";
+            this.Load += new System.EventHandler(this.frmSize_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tkbrSizeSelect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

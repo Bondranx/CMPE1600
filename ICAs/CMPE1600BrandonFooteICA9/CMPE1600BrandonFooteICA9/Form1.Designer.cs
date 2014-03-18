@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSize = new System.Windows.Forms.Button();
             this.btnColor = new System.Windows.Forms.Button();
+            this.tmrMouseClicks = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnSize
@@ -50,6 +52,12 @@
             this.btnColor.TabIndex = 1;
             this.btnColor.Text = "Color";
             this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // tmrMouseClicks
+            // 
+            this.tmrMouseClicks.Interval = 50;
+            this.tmrMouseClicks.Tick += new System.EventHandler(this.tmrMouseClicks_Tick);
             // 
             // frmMain
             // 
@@ -69,6 +77,7 @@
 
         private System.Windows.Forms.Button btnSize;
         private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.Timer tmrMouseClicks;
     }
 }
 
