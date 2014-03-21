@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblDisplayDrawColor = new System.Windows.Forms.Label();
             this.lblCircleSizeDisplay = new System.Windows.Forms.Label();
             this.lblCircleSize = new System.Windows.Forms.Label();
             this.lblDrawingColor = new System.Windows.Forms.Label();
             this.chbxShowSize = new System.Windows.Forms.CheckBox();
             this.chbxShowColor = new System.Windows.Forms.CheckBox();
+            this.tmrDrawTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblDisplayDrawColor
@@ -45,7 +47,6 @@
             this.lblDisplayDrawColor.Size = new System.Drawing.Size(37, 13);
             this.lblDisplayDrawColor.TabIndex = 11;
             this.lblDisplayDrawColor.Text = "          ";
-            this.lblDisplayDrawColor.Visible = false;
             // 
             // lblCircleSizeDisplay
             // 
@@ -84,6 +85,7 @@
             this.chbxShowSize.TabIndex = 7;
             this.chbxShowSize.Text = "Show Size Dialog";
             this.chbxShowSize.UseVisualStyleBackColor = true;
+            this.chbxShowSize.CheckedChanged += new System.EventHandler(this.chbxShowSize_CheckedChanged);
             // 
             // chbxShowColor
             // 
@@ -94,6 +96,11 @@
             this.chbxShowColor.TabIndex = 6;
             this.chbxShowColor.Text = "Show Color Dialog";
             this.chbxShowColor.UseVisualStyleBackColor = true;
+            this.chbxShowColor.CheckedChanged += new System.EventHandler(this.chbxShowColor_CheckedChanged);
+            // 
+            // tmrDrawTimer
+            // 
+            this.tmrDrawTimer.Tick += new System.EventHandler(this.tmrDrawTimer_Tick);
             // 
             // Form1
             // 
@@ -108,6 +115,7 @@
             this.Controls.Add(this.chbxShowColor);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +129,7 @@
         private System.Windows.Forms.Label lblDrawingColor;
         private System.Windows.Forms.CheckBox chbxShowSize;
         private System.Windows.Forms.CheckBox chbxShowColor;
+        private System.Windows.Forms.Timer tmrDrawTimer;
     }
 }
 
