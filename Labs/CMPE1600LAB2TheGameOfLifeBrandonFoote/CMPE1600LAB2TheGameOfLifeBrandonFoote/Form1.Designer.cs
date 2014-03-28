@@ -38,9 +38,10 @@
             // 
             // btnNewPattern
             // 
-            this.btnNewPattern.Location = new System.Drawing.Point(122, 41);
+            this.btnNewPattern.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewPattern.Location = new System.Drawing.Point(114, 41);
             this.btnNewPattern.Name = "btnNewPattern";
-            this.btnNewPattern.Size = new System.Drawing.Size(75, 23);
+            this.btnNewPattern.Size = new System.Drawing.Size(90, 24);
             this.btnNewPattern.TabIndex = 0;
             this.btnNewPattern.Text = "New Pattern";
             this.btnNewPattern.UseVisualStyleBackColor = true;

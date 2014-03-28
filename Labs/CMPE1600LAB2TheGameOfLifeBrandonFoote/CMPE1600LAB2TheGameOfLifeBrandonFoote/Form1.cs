@@ -12,7 +12,9 @@ namespace CMPE1600LAB2TheGameOfLifeBrandonFoote
 {
     public partial class Form1 : Form
     {
-        CDrawer Canvas = new 
+        CDrawer Canvas = null;
+        
+
 
         public Form1()
         {
@@ -21,6 +23,8 @@ namespace CMPE1600LAB2TheGameOfLifeBrandonFoote
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Canvas = new CDrawer();
+            Canvas.ContinuousUpdate = false;
 
         }
     }
