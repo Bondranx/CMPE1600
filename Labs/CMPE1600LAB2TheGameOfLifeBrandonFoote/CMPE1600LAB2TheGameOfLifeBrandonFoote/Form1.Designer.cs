@@ -45,6 +45,7 @@
             this.btnNewPattern.TabIndex = 0;
             this.btnNewPattern.Text = "New Pattern";
             this.btnNewPattern.UseVisualStyleBackColor = true;
+            this.btnNewPattern.Click += new System.EventHandler(this.btnNewPattern_Click);
             // 
             // lblCycle
             // 
