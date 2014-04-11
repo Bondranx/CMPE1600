@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnNewPattern = new System.Windows.Forms.Button();
             this.lblCycle = new System.Windows.Forms.Label();
             this.lblCycleDisplay = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnCycle = new System.Windows.Forms.Button();
+            this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnNewPattern
@@ -76,15 +78,18 @@
             this.btnStart.TabIndex = 3;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnStop
             // 
+            this.btnStop.Enabled = false;
             this.btnStop.Location = new System.Drawing.Point(122, 157);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 4;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnCycle
             // 
@@ -94,6 +99,11 @@
             this.btnCycle.TabIndex = 5;
             this.btnCycle.Text = "Cycle";
             this.btnCycle.UseVisualStyleBackColor = true;
+            this.btnCycle.Click += new System.EventHandler(this.btnCycle_Click);
+            // 
+            // GameTimer
+            // 
+            this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
             // 
             // Form1
             // 
@@ -122,6 +132,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnCycle;
+        private System.Windows.Forms.Timer GameTimer;
     }
 }
 

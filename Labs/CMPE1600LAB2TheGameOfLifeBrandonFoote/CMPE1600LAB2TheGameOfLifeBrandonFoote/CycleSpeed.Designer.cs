@@ -44,6 +44,7 @@
             this.tckbrCycleSpeed.TabIndex = 0;
             this.tckbrCycleSpeed.TickFrequency = 200;
             this.tckbrCycleSpeed.Value = 200;
+            this.tckbrCycleSpeed.Scroll += new System.EventHandler(this.tckbrCycleSpeed_Scroll);
             // 
             // lblFast
             // 
@@ -76,6 +77,7 @@
             this.MinimizeBox = false;
             this.Name = "CycleSpeed";
             this.Text = "CycleSpeed";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CycleSpeed_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.tckbrCycleSpeed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
