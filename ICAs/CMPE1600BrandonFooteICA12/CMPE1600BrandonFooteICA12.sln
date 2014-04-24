@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMPE1600BrandonFooteICA12", "CMPE1600BrandonFooteICA12\CMPE1600BrandonFooteICA12.csproj", "{7E00CB9B-9BF9-4E4A-85A4-D5D34FD5BAE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E00CB9B-9BF9-4E4A-85A4-D5D34FD5BAE0}.Debug|x86.ActiveCfg = Debug|x86
+		{7E00CB9B-9BF9-4E4A-85A4-D5D34FD5BAE0}.Debug|x86.Build.0 = Debug|x86
+		{7E00CB9B-9BF9-4E4A-85A4-D5D34FD5BAE0}.Release|x86.ActiveCfg = Release|x86
+		{7E00CB9B-9BF9-4E4A-85A4-D5D34FD5BAE0}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
